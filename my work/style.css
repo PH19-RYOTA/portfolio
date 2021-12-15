@@ -301,14 +301,23 @@ opacity: 1;
 
 /*========= スタイルシートCSS ===============*/
 h1{
-   font-size: 80px;
+   font-size: 70px;
    color: #fff;
    text-align: center;
    font-weight: normal;
 }
 
-.game,.web,.vr,.video,.award,footer{
+.game,.web,.vr,.video,.award,.career,footer{
    text-align: center;
+}
+
+.career p{
+   font-family: serif;
+   color: #fff;
+}
+
+.career a{
+   color: #fff;
 }
 
 small{

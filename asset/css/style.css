@@ -334,6 +334,15 @@
    .contact_img img {
        width: 25%;
    }
+
+   /* CAREER */
+   .list_carrer{
+       color: #181919;
+   }
+
+   .list_carrer li a{
+       color: #181919;
+   }
    
    /* CONTACT */
    
