@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+   <!-- 基本情報 -->
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width,initial-scale=1.0">
+   <title>YamamotoRyota/Portfolio</title>
+   <link rel="icon" href="./asset/img/ryota_logo_alpha.png">
+   <!-- SEO対策 -->
+   <meta name="keyword" content="ポートフォリオ,プログラマー,クリエイター,portfolio">
+   <meta name="description" content="山本涼太のポートフォリオサイトです。HTMLやCSS,JavaSciptを用いて制作しました。
+   普段はUnityを使ってゲーム制作やライブ制作、映像編集などをメインで制作しています。7月にゲーム会社から内定を頂きました。業界の皆様お世話になります。よろしくお願い致します。">
+   <link rel="canonical" href="https://ph19-ryota.github.io/portfolio/">   
+   <!--style.cssの読み込み-->
+   <link rel="stylesheet" href="./asset/css/style.css">
+
+   <!--jQuery.jsの読み込み-->
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+
+   <!-- ローディング画面 -->
+   <link href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/reset.css" rel="stylesheet">
+   <link href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/4-1-3/css/4-1-3.css" rel="stylesheet">
+   <link rel="stylesheet" type="text/css" href="./asset/css/loading.css">
+
+   <!-- ハンバーガーメニューCSS -->
+   <link rel="stylesheet" href="./asset/css/hamburger.css">
+
+   <!--スムーズスクロール実装-->
+   <script>
+      $(function(){
+        // #で始まるリンクをクリックしたら実行されます
+        $('a[href^="#"]').click(function() {
+          // スクロールの速度
+          let speed = 700; // ミリ秒で記述
+          let href= $(this).attr("href");
+          let target = $(href == "#" || href == "" ? 'html' : href);
+          let position = target.offset().top;
+          $('body,html').animate({scrollTop:position}, speed, 'swing');
+          return false;
+        });
+      });  
+   </script>
+   <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+   <script src="./asset/js/jquery.event.move.js"></script>
+</head>
+<body>
+   <!-- Loading -->
+
+   <header>
+      <h1 class="headline">
+         <a>YAMAMOTO RYOTA</a>
+      </h1>
+      <!-- ハンバーガーメニュー -->
+      <div class="openbtn"><span></span><span></span><span></span></div>
+      <nav id="g-nav">
+         <div id="g-nav-list">
+            <ul>
+               <li><a href="#">TOP</a></li>
+               <li><a href="#About">ABOUT</a></li>
+               <li><a href="#Skills">SKILLS</a></li>
+               <li><a href="#Works">WORKS</a></li>
+               <li><a href="#Contact">CONTACT</a></li>
+            </ul>
+         </div>
+      </nav>
+      <div class="circle-bg"></div>
+   </header>
+   <main>
+      <div class="top_view" id="#">
+         <div class="top_container">
+            <video style="max-width: 90%;" preload="none" muted="" autoplay="" playsinline="" loop>
+               <source src="./asset/video/My Portfolio Movie.mp4" type="video/mp4">
+            </video>
+         </div>
+         <div class="top_ttl"></div>
+      </div>
+      <!-- ABOUT -->
+      <section class="about" id="About">
+         <div class="container">
+            <h1>ABOUT</h1><hr><br>
+         </div>
+         <div class="body_home">
+            <div class="text_home">
+               <p class="about_ttl">挑戦が創り出す</p>
+               <p class="about_description">
+                  山本涼太は好奇心と行動力を武器に、<br>
+                  クリエイティブなモノづくりに挑戦しています。
+               </p>
+               <div class="btn">
+                  <a class="btn-box" href="#Works">詳しくはこちらから</a>
+               </div>
+            </div>
+         </div>
+      </section>
+
+      <!-- SKILLS -->
+      <section class="skills" id="Skills">
+         <div class="container">
+            <div class="skills_heading">
+               <h1>SKILLS</h1><hr>
+               <p class="skills_ttl">様々な分野で活躍</p>
+            </div>
+         </div>
+            <ul class="list_skills">
+               <li>
+                  <a href=""></a>
+                  <img src="./asset/img/game_256px.png" alt="ゲームアイコン">
+                  <a href="https://ph19-ryota.github.io/portfolio/my%20work/index.html#game" target="_blank"><p>GAME</p></a>
+               </li>
+               <li>
+                  <img src="./asset/img/web_256px.png" alt="Webアイコン">
+                  <a href="https://ph19-ryota.github.io/portfolio/my%20work/index.html#web" target="_blank"><p>WEB</p></a>
+               </li>
+               <li>
+                  <img src="./asset/img/movie_256px.png" alt="動画アイコン">
+                  <a href="https://ph19-ryota.github.io/portfolio/my%20work/index.html#video" target="_blank"><p>MOVIE</p></a>
+               </li>
+               <li>
+                  <img src="./asset/img/dj_256px.png" alt="ライブアイコン">
+                  <a href="https://ph19-ryota.github.io/portfolio/my%20work/index.html#vr" target="_blank"><p>VirtualLIVE</p></a>
+               </li>
+            </ul>
+      </section>
+
+      <!-- WORKS -->
+      <section class="works" id="Works">
+         <div class="container">
+            <div class="works_heading1">
+               <h1>WORKS</h1><hr><br>
+               <p class="works_ttl">好奇心から作る<br>制作物</p>
+            </div>
+         </div>
+         <div class="body_home">
+            <div class="text_home">
+               <div class="layout_2_div">
+                  <img src="./asset/img/workimage.png" alt="山本涼太の作品集画像">
+               </div>
+               <div class="btn">
+                  <a href="./my work/index.html" class="btn-box">作品実績</a>
+               </div>
+            </div>
+         </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section class="contact" id="Contact">
+         <div class="container">
+            <div class="contact_heading">
+               <h1>CONTACT</h1><hr>
+               <div class="btn2">
+                  <a href="mailto:ryota.yamamoto03@gmail.com?SUBJECT=ポートフォリオサイトからのお問い合わせ" class="btn-box2">お問い合わせはこちらから</a>
+               </div>
+            </div>
+         </div>
+      </section>
+   </main>
+   <footer>
+      <div class="container">
+         <p class="copyright">
+            &copy; 2021-2023 Created by YamamotoRyota
+         </p>
+      </div>
+   </footer>
+   <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+   <script src="https://rawgit.com/kimmobrunfeldt/progressbar.js/master/dist/progressbar.min.js"></script>
+   <script src="./asset/js/loading.js"></script>
+   <!-- ハンバーガーメニューjs -->
+   <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+   <script src="./asset/js/hamburger.js"></script>
+</body>
+</html>
