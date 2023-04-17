@@ -1,0 +1,331 @@
+/*========= body背景色の変化CSS ===============*/
+
+body {
+	width: 100%;
+	min-height: 100vh;
+	background:linear-gradient(45deg, #3bade3,#9844b7,#ea4444);/*グラデーションを定義*/
+	background-size: 200% 200%;/*サイズを大きくひきのばす*/
+	animation: bggradient 20s ease infinite;
+   font-family: 'Codystar', cursive;
+   font-family: 'Raleway Dots', cursive;  
+   overflow-x: hidden;
+}
+
+@media screen  and (max-width:599px){
+   *{
+      margin: 0;
+   }
+
+   body{
+      background: #3bade3;
+      width: 100%;
+      text-align: center;
+   }
+
+   img{
+      width: 90%;
+      height: auto;
+   }
+
+   #wrapper{
+   display: none;
+   }
+}
+
+@keyframes bggradient{
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+/*========= 粒子テキストCSS ===============*/
+#wrapper{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+#particle{
+   width: 100%;
+   height: 100vh;
+   vertical-align: bottom;
+}
+
+/*========= ナビゲーションのためのCSS ===============*/
+
+/*アクティブになったエリア*/
+#g-nav.panelactive{
+   /*position:fixed;にし、z-indexの数値を大きくして前面へ*/
+   position:fixed;
+   z-index: 999;
+  top: 0;
+  width:100%;
+   height: 100vh;
+}
+
+/*丸の拡大*/
+.circle-bg{
+   position: fixed;
+  z-index:3;
+   /*丸の形*/
+   width: 100px;
+   height: 100px;
+   border-radius: 50%;
+   background: #9844b7;
+   /*丸のスタート位置と形状*/
+  transform: scale(0);/*scaleをはじめは0に*/
+   top:calc(50% - 50px);/*50%から円の半径を引いた値*/
+   left:calc(50% - 50px);/*50%から円の半径を引いた値*/
+   transition: all .6s;/*0.6秒かけてアニメーション*/
+}
+
+.circle-bg.circleactive{
+  transform: scale(50);/*クラスが付与されたらscaleを拡大*/
+}
+
+/*ナビゲーションの縦スクロール*/
+#g-nav-list{
+   display: none;/*はじめは表示なし*/
+   /*ナビの数が増えた場合縦スクロール*/
+   position: fixed;
+   z-index: 999; 
+   width: 100%;
+   height: 100vh;
+   overflow: auto;
+   -webkit-overflow-scrolling: touch;
+}
+
+#g-nav.panelactive #g-nav-list{
+    display: block; /*クラスが付与されたら出現*/
+}
+
+/*ナビゲーション*/
+#g-nav ul {
+  opacity: 0;/*はじめは透過0*/
+   /*ナビゲーション天地中央揃え※レイアウトによって調整してください。不必要なら削除*/
+   position: absolute;
+   z-index: 999;
+   top:50%;
+   left:50%;
+   transform: translate(-50%,-50%);
+}
+
+/*背景が出現後にナビゲーションを表示*/
+#g-nav.panelactive ul {
+   opacity:1;
+}
+
+/* 背景が出現後にナビゲーション li を表示※レイアウトによって調整してください。不必要なら削除*/
+#g-nav.panelactive ul li{
+animation-name:gnaviAnime;
+animation-duration:1s;
+animation-delay:.2s;/*0.2 秒遅らせて出現*/
+animation-fill-mode:forwards;
+opacity:0;
+}
+@keyframes gnaviAnime{
+0% {
+opacity: 0;
+}
+100% {
+opacity: 1;
+}
+}
+
+/*リストのレイアウト設定*/
+#g-nav li{
+  text-align: center; 
+  list-style: none;
+}
+
+#g-nav li a{
+  color: #fff;
+  text-decoration: none;
+  padding:10px;
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: normal;
+  font-size: 50px;
+}
+
+
+/*========= ボタンのためのCSS ===============*/
+.openbtn{
+  position:fixed;
+  top:10px;
+  right: 10px;
+  z-index: 9999;/*ボタンを最前面に*/
+  cursor: pointer;
+   width: 50px;
+   height:50px;
+}
+  
+/*×に変化*/	
+.openbtn span{
+   display: inline-block;
+   transition: all .4s;
+   position: absolute;
+   left: 14px;
+   height: 3px;
+   border-radius: 2px;
+  background-color: #fff;
+    width: 45%;
+ }
+
+.openbtn span:nth-of-type(1) {
+  top:15px;	
+}
+
+.openbtn span:nth-of-type(2) {
+  top:23px;
+}
+
+.openbtn span:nth-of-type(3) {
+  top:31px;
+}
+
+.openbtn.active span:nth-of-type(1) {
+   top: 18px;
+   left: 18px;
+   transform: translateY(6px) rotate(-45deg);
+   width: 30%;
+}
+
+.openbtn.active span:nth-of-type(2) {
+  opacity: 0;
+}
+
+.openbtn.active span:nth-of-type(3){
+   top: 30px;
+   left: 18px;
+   transform: translateY(-6px) rotate(45deg);
+   width: 30%;
+}
+
+/*========= アニメーションCSS ===============*/
+/* フェードイン */
+.fadeIn{
+   animation-name: fadeInAnime;
+   animation-duration: 1s;
+   animation-fill-mode: forwards;
+   opacity: 0;
+}
+@keyframes fadeInAnime{
+   from{
+      opacity: 0;
+   }
+   to{
+      opacity: 1;
+   }
+}
+
+/* 下から */
+.fadeUp{
+   animation-name: fadeUpAnime;
+   animation-duration: 0.5s;
+   animation-fill-mode: forwards;
+   opacity: 0;
+}
+@keyframes fadeUpAnime{
+   from{
+      opacity: 0;
+      transform: translateY(100px);
+   }
+   to{
+      opacity: 1;
+      transform: translateY(0);
+   }
+}
+
+/*========= スクロールダウンCSS ===============*/
+.scrolldown1{
+   /*描画位置※位置は適宜調整してください*/
+  position:absolute;
+  left:50%;
+  bottom:10px;
+   /*全体の高さ*/
+  height:150px;
+}
+
+/*Scrollテキストの描写*/
+.scrolldown1 span{
+   /*描画位置*/
+  position: absolute;
+  left:-15px;
+  top: -15px;
+   /*テキストの形状*/
+  color: #eee;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+}
+
+/* 線の描写 */
+.scrolldown1::after{
+  content: "";
+   /*描画位置*/
+  position: absolute;
+  top: 0;
+   /*線の形状*/
+  width: 1px;
+  height: 30px;
+  background: #eee;
+   /*線の動き1.4秒かけて動く。永遠にループ*/
+  animation: pathmove 1.4s ease-in-out infinite;
+  opacity:0;
+}
+
+/*高さ・位置・透過が変化して線が上から下に動く*/
+@keyframes pathmove{
+  0%{
+     height:0;
+     top:0;
+     opacity: 0;
+  }
+  30%{
+     height:30px;
+     opacity: 1;
+  }
+  100%{
+     height:0;
+     top:50px;
+     opacity: 0;
+  }
+}
+
+/*========= スタイルシートCSS ===============*/
+h1{
+   font-size: 70px;
+   color: #fff;
+   text-align: center;
+   font-weight: normal;
+}
+
+.game,.web,.vr,.video,.award,.career,footer{
+   text-align: center;
+}
+
+.career p{
+   font-family: serif;
+   color: #fff;
+}
+
+.career a{
+   color: #fff;
+}
+
+small{
+   color: #fff;
+}
+
+img{ 
+   /* ボーダーライン */
+   border-style: solid;
+   border-color: white;
+}
