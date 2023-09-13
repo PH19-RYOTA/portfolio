@@ -8,9 +8,9 @@
    <title>YamamotoRyota/Portfolio</title>
    <link rel="icon" href="./asset/img/ryota_logo_alpha.png">
    <!-- SEO対策 -->
-   <meta name="keyword" content="ポートフォリオ,プログラマー,クリエイター,portfolio">
-   <meta name="description" content="山本涼太のポートフォリオサイトです。HTMLやCSS,JavaSciptを用いて制作しました。
-   普段はUnityを使ってゲーム制作やライブ制作、映像編集などをメインで制作しています。7月にゲーム会社から内定を頂きました。業界の皆様お世話になります。よろしくお願い致します。">
+   <meta name="keyword" content="ポートフォリオ,マルチクリエイター,portfolio,山本涼太,YAMAMOTORYOTA">
+   <meta name="description" content="山本涼太のポートフォリオサイトです。HTML,CSS,JSを用いて制作しました。
+   趣味でUnityを使ってゲーム制作やバーチャルライブ制作、映像編集などをメインで制作しています。">
    <link rel="canonical" href="https://ph19-ryota.github.io/portfolio/">   
    <!--style.cssの読み込み-->
    <link rel="stylesheet" href="./asset/css/style.css">
@@ -31,10 +31,8 @@
    <!--スムーズスクロール実装-->
    <script>
       $(function(){
-        // #で始まるリンクをクリックしたら実行されます
         $('a[href^="#"]').click(function() {
-          // スクロールの速度
-          let speed = 700; // ミリ秒で記述
+          let speed = 700; 
           let href= $(this).attr("href");
           let target = $(href == "#" || href == "" ? 'html' : href);
           let position = target.offset().top;
