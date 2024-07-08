@@ -5,10 +5,10 @@
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-   <title>YamamotoRyota/Portfolio</title>
+   <title>山本涼太/Portfolio</title>
    <link rel="icon" href="./asset/img/ryota_logo_alpha.png">
    <!-- SEO対策 -->
-   <meta name="keyword" content="ポートフォリオ,portfolio,山本涼太,YAMAMOTORYOTA">
+   <meta name="keyword" content="山本涼太,ポートフォリオ,クリエィティブ,YAMAMOTORYOTA">
    <meta name="description" content="山本涼太のポートフォリオサイトです。HTML,CSS,JSを用いて制作しました。
    趣味でUnityを使ってゲーム制作やバーチャルライブ制作、映像編集などを制作しています。">
    <link rel="canonical" href="https://ph19-ryota.github.io/portfolio/">   
@@ -27,22 +27,11 @@
 
    <!-- ハンバーガーメニューCSS -->
    <link rel="stylesheet" href="./asset/css/hamburger.css">
-
-   <!--スムーズスクロール実装-->
-   <script>
-      $(function(){
-        $('a[href^="#"]').click(function() {
-          let speed = 700; 
-          let href= $(this).attr("href");
-          let target = $(href == "#" || href == "" ? 'html' : href);
-          let position = target.offset().top;
-          $('body,html').animate({scrollTop:position}, speed, 'swing');
-          return false;
-        });
-      });  
-   </script>
    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
    <script src="./asset/js/jquery.event.move.js"></script>
+
+   <!--スムーズスクロール実装-->
+   <script src="./asset/js/smooth-scroll.js"></script>
 </head>
 <body>
    <!-- Loading -->
