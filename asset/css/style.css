@@ -1,5 +1,8 @@
 
 /* 全体指定 */
+.contact-form-h2{
+    text-align: center;
+}
 
 /* スマホ用 */
 
@@ -1059,21 +1062,6 @@ section {
        flex-direction: column;
        align-items: center;
        background-color: #dcdcdc;
-   }
-   
-   /* SNSリスト */
-   
-   .list_sns {
-       display: flex;
-       align-items: center;
-   }
-   
-   .list_sns > li {
-       margin: 0 20px;
-   }
-
-   .list_sns img {
-       width: 20%;
    }
    
    .copyright {
