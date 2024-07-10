@@ -32,7 +32,7 @@ th {
 }
 
 td a{
-   text-decoration: none;
+   /* text-decoration: none; */
    color: #fff;
 }
 
